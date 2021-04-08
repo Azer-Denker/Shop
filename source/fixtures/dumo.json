@@ -1,0 +1,206 @@
+[
+{
+  "model": "webapp.shop",
+  "pk": 2,
+  "fields": {
+    "name": "qwe",
+    "description": "ee",
+    "category": "other",
+    "amount": 1,
+    "price": "12.00"
+  }
+},
+{
+  "model": "webapp.shop",
+  "pk": 3,
+  "fields": {
+    "name": "213",
+    "description": "qwe",
+    "category": "other",
+    "amount": 0,
+    "price": "23.00"
+  }
+},
+{
+  "model": "webapp.shop",
+  "pk": 4,
+  "fields": {
+    "name": "qweqew",
+    "description": "",
+    "category": "tech",
+    "amount": 123,
+    "price": "12.00"
+  }
+},
+{
+  "model": "webapp.shop",
+  "pk": 5,
+  "fields": {
+    "name": "123123",
+    "description": "123",
+    "category": "toys",
+    "amount": 12322,
+    "price": "2222.00"
+  }
+},
+{
+  "model": "webapp.shop",
+  "pk": 6,
+  "fields": {
+    "name": "311",
+    "description": "2231",
+    "category": "food",
+    "amount": 123,
+    "price": "1233.00"
+  }
+},
+{
+  "model": "webapp.shop",
+  "pk": 7,
+  "fields": {
+    "name": "qwe",
+    "description": "",
+    "category": "tools",
+    "amount": 2132,
+    "price": "200.00"
+  }
+},
+{
+  "model": "webapp.shop",
+  "pk": 8,
+  "fields": {
+    "name": "qweq2",
+    "description": "",
+    "category": "other",
+    "amount": 12334,
+    "price": "2.00"
+  }
+},
+{
+  "model": "webapp.shop",
+  "pk": 9,
+  "fields": {
+    "name": "1231344",
+    "description": "",
+    "category": "other",
+    "amount": 20,
+    "price": "1.00"
+  }
+},
+{
+  "model": "webapp.shop",
+  "pk": 10,
+  "fields": {
+    "name": "jk",
+    "description": "",
+    "category": "other",
+    "amount": 99,
+    "price": "120.00"
+  }
+},
+{
+  "model": "webapp.shop",
+  "pk": 11,
+  "fields": {
+    "name": "123",
+    "description": "qweqwr",
+    "category": "other",
+    "amount": 200,
+    "price": "300.00"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 1,
+  "fields": {
+    "name": "qwe",
+    "phone": "+99612341234",
+    "address": "qwe",
+    "created_at": "2021-04-07T11:01:26.922Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 2,
+  "fields": {
+    "name": "rrgrg",
+    "phone": "grgrg",
+    "address": "grgrgrgr",
+    "created_at": "2021-04-08T11:05:03.462Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 3,
+  "fields": {
+    "name": "rrgrg",
+    "phone": "grgrg",
+    "address": "grgrgrgr",
+    "created_at": "2021-04-08T11:05:40.315Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 4,
+  "fields": {
+    "name": "grgr",
+    "phone": "grgr",
+    "address": "rgr",
+    "created_at": "2021-04-08T11:06:30.243Z"
+  }
+},
+{
+  "model": "webapp.ordershop",
+  "pk": 1,
+  "fields": {
+    "shop": 2,
+    "order": 1,
+    "qol": 2
+  }
+},
+{
+  "model": "webapp.ordershop",
+  "pk": 2,
+  "fields": {
+    "shop": 2,
+    "order": 3,
+    "qol": 11
+  }
+},
+{
+  "model": "webapp.ordershop",
+  "pk": 3,
+  "fields": {
+    "shop": 3,
+    "order": 3,
+    "qol": 8
+  }
+},
+{
+  "model": "webapp.ordershop",
+  "pk": 4,
+  "fields": {
+    "shop": 3,
+    "order": 4,
+    "qol": 4
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$5K39BztHDsjs$LjflvgY9iFRTfbLVPkG5tR4xXcieeM+VMosuGLN01CY=",
+    "last_login": "2021-04-07T11:01:07.835Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-04-07T11:00:50.672Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
