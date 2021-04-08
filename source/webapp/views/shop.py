@@ -1,18 +1,36 @@
+from django.db.models import Q
 from django.http import HttpResponseNotFound
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from webapp.models import Shop
-from webapp.forms import ShopForm
+from webapp.forms import ShopForm, CartAddForm, SimpleSearchForm
 
 
 class IndexView(ListView):
     template_name = 'shop/index.html'
     context_object_name = 'shops'
     model = Shop
-    ordering = ['-name']
+    ordering = ['category', 'name']
+    form_class = SimpleSearchForm
     paginate_by = 5
-    paginate_orphans = 0
+
+    def get_queryset(self):
+        form = self.form_class(self.request.GET)
+        data = Shop.objects.all()
+        if form.is_valid():
+            search = form.cleaned_data['search']
+            if search:
+                data = data.filter(Q(name__icontains=search)).order_by('name')
+                return data
+        if not self.request.GET.get('is_admin', None):
+            data = Shop.objects.all().filter(amount__gt=0)
+        return data
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CartAddForm()
+        return context
 
 
 class ShopView(DetailView):
@@ -24,6 +42,11 @@ class ShopView(DetailView):
 
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CartAddForm()
+        return context
 
 
 class ShopCreateView(CreateView):

@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from webapp.views import IndexView, ShopView,\
-    ShopUpdateView, ShopCreateView, ShopDeleteView
+from webapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +24,8 @@ urlpatterns = [
     path('shops/add/', ShopCreateView.as_view(), name='shop_create'),
     path('shop/<int:pk>/update/', ShopUpdateView.as_view(), name='shop_update'),
     path('shop/<int:pk>/delete/', ShopDeleteView.as_view(), name='shop_delete'),
+    path('shop/<int:pk>/cart/add/', CartAddView.as_view(), name='cart_add'),
+    path('cart/', CartView.as_view(), name='cart_view'),
+    path('cart/<int:pk>/delete/', CartDeleteView.as_view(), name='cart_delete'),
+    path('order/', OrderCreateView.as_view(), name='order_create'),
 ]

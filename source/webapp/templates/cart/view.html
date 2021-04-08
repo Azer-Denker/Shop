@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+    <table class="table table-striped mt-5">
+        <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Название</th>
+            <th scope="col">Цена</th>
+            <th scope="col">Количество</th>
+            <th scope="col">Сумма</th>
+        </tr>
+        </thead>
+        <tbody>
+  {% for cart in shops %}
+      <tr>
+          <td></td>
+          <td>{{ cart.shops.name }}</td>
+          <td>{{ cart.shops.price }}</td>
+          <td>{{ cart.qol }}</td>
+          <td>{{ cart.get_total }}</td>
+      </tr>
+  {% endfor %}
+        <tr><td></td><td></td><td></td><td>Итого</td><td>{{ total }} </td></tr>
+        </tbody>
+    {% url 'order_create' as action_url %}
+        {% include 'partial/form.html' with button_text='Оформить заказ' action_url=action_url form_method='post' %}
+    </table>
+{% endblock %}
